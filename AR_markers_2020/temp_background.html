@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,14 +13,19 @@
 
   <body style='margin : 0px; overflow: hidden;'>
 
-		<a-scene embedded arjs='trackingMethod: best;debugUIEnabled: false; '>
 		<!-- <a-scene embedded arjs='trackingMethod: best;debugUIEnabled: false; patternRatio: 0.75'> -->
+		<a-scene embedded arjs='trackingMethod: best;debugUIEnabled: false;'>
+				<a-assets>
+					<img id="img1" src="./images/samples/background.jpg">
+				</a-assets>
 
 				<a-marker preset="hiro">
-						<a-box color="yellow" position="0 0 0" 			 rotation="0 0 0" scale="0.2 0.2 0.2"></a-box>
-						<a-box color="red" 		position="0.5 0 0" 		 rotation="0 45 0" scale="0.2 0.2 0.2"></a-box>
-						<a-box color="blue" 	position="0.5 0.5 0" 	 rotation="45 0 0" scale="0.2 0.2 0.2"></a-box>
-						<a-box color="green" 	position="0.5 0.5 0.5" rotation="0 0 45" scale="0.2 0.2 0.2"></a-box>
+								<a-plane src="#img1"
+												 height="2"
+												 width="2"
+												 position="0 0 0"
+												 rotation="-90 0 0">
+								</a-plane>
 				</a-marker>
 
 				<a-entity camera></a-entity>
@@ -35,10 +40,8 @@
 			// patternRatio : [default] / 0.75 / 0.90 selon l'épaisseur du contour du marker généré
 
 			<a-marker preset="hiro">
+			<a-marker preset="kanji">
 
-			<a-marker type="pattern" url="./patterns/pattern-Etienne.patt"> 						ok
-			<a-marker type="pattern" url="./patterns/pattern-Etienne_thin.patt"> 				ok
-			<a-marker type="pattern" url="./patterns/pattern-Etienne_thinest.patt"> 		ok
-			<a-marker type="pattern" url="./patterns/pattern-Etienne_blue.patt"> 				ok
-			<a-marker type="pattern" url="./patterns/pattern-Etienne_borderblue.patt"> 	ok
+			<a-marker type="pattern" url="./patterns/pattern-xxxx.patt">
+
 		-->
