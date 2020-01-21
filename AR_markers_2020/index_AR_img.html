@@ -1,0 +1,34 @@
+<!doctype HTML>
+<html>
+  <head>
+      <title>exemples AR avec AR.js</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- librairies utiles pour la réalité augmentée et l'utilisation des modèles en 3D _ NE PAS MODIFIER -->
+      <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+      <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+      <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
+
+  </head>
+
+  <body>
+
+      <a-assets>
+        <img id="img" src="image_512x512.png">
+      </a-assets>
+
+      <!-- scène virtuelle -->
+      <a-scene embedded arjs='trackingMethod: best; debugUIEnabled: false;'>
+            <a-marker preset="hiro">                        <!-- marker par défaut -->
+                <a-plane position="0 0 0" src="#img" height="2" width="2"></a-plane>
+            </a-marker>
+
+            <a-entity camera>
+                <a-cursor color="red"></a-cursor>     <!-- c'est le cercle rouge au centre de la scène -->
+            </a-entity>
+
+      </a-scene>
+
+  </body>
+</html>
