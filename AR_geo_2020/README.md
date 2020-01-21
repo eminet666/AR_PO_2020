@@ -1,5 +1,7 @@
-# AR_geo : réalité augmentée par géolocalisation
+# AR_PO_2020 _ Applications par géolocalisation
 
+# Liens utiles
+* create markers : https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html
 
 * liens coordonnées GPS
 
