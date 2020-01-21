@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Position GPS demo</title>
+    <style>
+      div { font-size: 30px; }
+    </style>
+  </head>
+
+  <body>
+      <div id="results"></div>
+
+      <script>
+          document.getElementById("results").innerHTML = "";
+
+           navigator.geolocation.getCurrentPosition(positionIs, positionIsNot, {
+             enableHighAccuracy : false,
+             maximumAge: 0,
+             timeout: 3000
+           });
+
+           function positionIs(position) {
+             document.getElementById("results").innerHTML += "SUCESS: latitude : " + position.coords.latitude.toFixed(6);
+             document.getElementById("results").innerHTML += "; longitude : " + position.coords.longitude.toFixed(6) + "; <br>";
+             // document.getElementById("results").innerHTML += "Please wait few seconds...<br>";
+           }
+
+           function positionIsNot(err) {
+             document.getElementById("results").innerHTML += "ERROR: " + err.code + " " + err.message + "<br>";
+           }
+      </script>
+
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Position GPS demo</title>
+    <style>
+      a { font-size: 30px; }
+    </style>
+  </head>
+  <body>
+    <div id="info">info</div>
+
+    <script>
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    function success(pos) {
+      var crd = pos.coords;
+
+      var info = document.querySelector("#info");
+      info.innerHTML = "latitude : "+crd.latitude.toFixed(5);
+      info.innerHTML += "<br>longitude : "+crd.longitude.toFixed(5);
+      info.innerHTML += "<br>précision : "+crd.accuracy+"m";
+
+      console.log('Votre position actuelle est :');
+      console.log(`Latitude : ${crd.latitude}`);
+      console.log(`Longitude : ${crd.longitude}`);
+      console.log(`La précision est de ${crd.accuracy} mètres.`);
+    }
+
+    function error(err) {
+      console.warn(`ERREUR (${err.code}): ${err.message}`);
+    }
+
+    navigator.geolocation.getCurrentPosition(success, error, options);
+
+    </script>
+
+
+  </body>
+</html>
