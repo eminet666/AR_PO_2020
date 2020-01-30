@@ -44,7 +44,7 @@
         2.295270, 48.833720 :  Violette = terrasse 107
         2.295298, 48.833338 :  centre cour
         2.295176, 48.833534 :  Chloé : palier relation internationales
-        2.295488, 48.833449 :  couloir devant 108
+        2.295488, 48.833449 :  Ronan : couloir devant 108
         2.295284, 48.833466 :  cage escalier principal
         2.294903, 48.833488 :  pont extérieur
         2.295354, 48.833618 :  Milène = salle 107
@@ -52,7 +52,8 @@
         -->
 
         <a-assets>
-  				<a-asset-item id="glbFlamingo" src="./models/Flamingo.glb"></a-asset-item>
+          <a-asset-item id="glbFlamingo" src="./models/Flamingo.glb"></a-asset-item>
+  				<a-asset-item id="glbRonan" src="./models/ronan_mante_pose.glb"></a-asset-item>
   			</a-assets>
 
         <!-- NOM : cour angle Sud-Est -->
@@ -115,12 +116,12 @@
             animation-mixer>
         </a-entity>
 
-        <!-- NOM : couloir devant 108 -->
-        <a-entity id="NOM7"
-            gltf-model="#glbFlamingo"
+        <!-- RONAN : couloir devant 108 -->
+        <a-entity id="RONAN"
+            gltf-model="#glbRonan"
             loaded
-            rotation="0 180 0"
-            scale="2 2 2"
+            rotation="90 180 0"
+            scale="10 10 10"
             gps-entity-place="longitude: 2.295488; latitude: 48.833449;"
             animation-mixer>
         </a-entity>
