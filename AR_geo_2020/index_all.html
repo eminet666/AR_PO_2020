@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title>PO 2020 _ ensaama _ AR Geo</title>
+    <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script>
+        THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
+    </script>
+
+    <script>
+				AFRAME.registerComponent('loaded', {
+						init: function () {
+							var el = this.el;
+							el.addEventListener('model-loaded', () => {
+									console.log(el.id+" chargé");
+								});
+							this.el.addEventListener('model-error', () => {
+									// Grab the mesh / scene.
+									console.log("erreur");
+								});
+							}
+				});
+		</script>
+
+</head>
+
+<body style='margin: 0; overflow: hidden;'>
+    <a-scene
+        vr-mode-ui="enabled: false"
+		    embedded
+        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'
+        gltf-model="dracoDecoderPath: ./draco/;">
+
+        <!-- ENSAAMA
+        2.295307, 48.833190 :  cour angle Sud-Est
+        2.295618, 48.833346 :  Violette : cour angle Nord-Est
+        2.295012, 48.833399 :  Lucie : hall
+        2.295270, 48.833720 :  Tsir : terrasse 107
+        2.295298, 48.833338 :  Tanilo : centre cour
+        2.295176, 48.833534 :  Hugo : palier relation internationales
+        2.295488, 48.833449 :  Ronan : couloir devant 108
+        2.295284, 48.833466 :  Almamy : escalier principal
+        2.294903, 48.833488 :  Janis : pont extérieur
+        2.295354, 48.833618 :  Milène = salle 107
+        2.295085, 48.833255 :  couloir Sud
+        -->
+
+        <a-assets>
+          <a-asset-item id="glbFlamingo" src="./models/Flamingo.glb"></a-asset-item>
+          <a-asset-item id="glbTsir" src="./models/ok_tsir_libellule.glb"></a-asset-item>
+          <a-asset-item id="glbRonan" src="./models/ronan_mante_pose.glb"></a-asset-item>
+          <a-asset-item id="glbAlmamy1" src="./models/ok_almamy_frelon1.glb"></a-asset-item>
+  				<a-asset-item id="glbAlmamy2" src="./models/ok_almamy_frelon2.glb"></a-asset-item>
+  				<a-asset-item id="glbAlmamy3" src="./models/ok_almamy_frelon3.glb"></a-asset-item>
+  				<a-asset-item id="glbAlmamy4" src="./models/ok_almamy_ruche.glb"></a-asset-item>
+          <a-asset-item id="glbTanilo" src="./models/ok_tanilo_hornet.glb"></a-asset-item>
+          <a-asset-item id="glbHugo" src="./models/ok_hugo_frelon_texture.glb"></a-asset-item>
+          <a-asset-item id="glbLucie" src="./models/ok_lucie_libellule.glb"></a-asset-item>
+          <a-asset-item id="glbJanis" src="./models/ok_janis_mante.glb"></a-asset-item>
+          <a-asset-item id="glbViolette" src="./models/ok_violette_frelon.glb"></a-asset-item>
+          <a-asset-item id="glbMylene1" src="./models/ok_mylene_bleue.glb"></a-asset-item>
+  				<a-asset-item id="glbMylene2" src="./models/ok_mylene_doree.glb"></a-asset-item>
+          <a-asset-item id="glbChloe" src="./models/ok_chloe_mante.glb"></a-asset-item>
+
+  			</a-assets>
+
+        <!-- NOM : cour angle Sud-Est -->
+        <a-entity id="JANIS"
+            gltf-model="#glbJanis"
+            loaded
+            rotation="0 0 0"
+            scale="2 2 2"
+            gps-entity-place="longitude: 2.295307; latitude: 48.833190;"
+            animation-mixer>
+        </a-entity>
+
+        <!-- NOM : cour angle Nord-Est -->
+        <a-entity id="VIOLETTE"
+            gltf-model="#glbViolette"
+            loaded
+            rotation="0 0 0"
+            scale="2 2 2"
+            gps-entity-place="longitude: 2.295618; latitude: 48.833346;"
+            animation-mixer>
+        </a-entity>
+
+        <!-- NOM : Hall -->
+        <a-entity id="LUCIE"
+            gltf-model="#glbLucie"
+            loaded
+            rotation="0 0 0"
+            scale="2 2 2"
+            gps-entity-place="longitude: 2.295012; latitude: 48.833399;"
+            animation-mixer>
+        </a-entity>
+
+        <!-- Violette = terrasse 107 -->
+        <a-entity id="TSIR"
+            gltf-model="#glbTsir"
+            loaded
+            rotation="0 180 0"
+            scale="2 2 2"
+            gps-entity-place="longitude: 2.295270; latitude: 48.833720;"
+            animation-mixer>
+        </a-entity>
+
+        <!-- NOM : centre cour -->
+        <a-entity id="TANILO"
+            gltf-model="#glbTanilo"
+            loaded
+            rotation="0 180 0"
+            scale="2 2 2"
+            gps-entity-place="longitude: 2.295298; latitude: 48.833338;"
+            animation-mixer>
+        </a-entity>
+
+        <!-- Chloé : palier relation internationales -->
+        <a-entity id="HUGO"
+            gltf-model="#glbHugo"
+            loaded
+            rotation="0 180 0"
+            scale="2 2 2"
+            gps-entity-place="longitude: 2.295176; latitude: 48.833534;"
+            animation-mixer>
+        </a-entity>
+
+        <!-- RONAN : couloir devant 108 -->
+        <a-entity id="RONAN"
+            gltf-model="#glbRonan"
+            loaded
+            rotation="90 180 0"
+            scale="10 10 10"
+            gps-entity-place="longitude: 2.295488; latitude: 48.833449;"
+            animation-mixer>
+        </a-entity>
+
+        <!-- NOM : cage escalier principal -->
+        <a-entity id="ALMAMY1"
+            gltf-model="#glbAlmamy1"
+            loaded
+            rotation="0 180 0"
+            scale="2 2 2"
+            gps-entity-place="longitude: 2.295284; latitude: 48.833466;"
+            animation-mixer>
+        </a-entity>
+
+        <a-entity id="ALMAMY2"
+            gltf-model="#glbAlmamy2"
+            loaded
+            rotation="0 180 0"
+            scale="2 2 2"
+            gps-entity-place="longitude: 2.295284; latitude: 48.833466;"
+            animation-mixer>
+        </a-entity>
+
+        <a-entity id="ALMAMY3"
+            gltf-model="#glbAlmamy3"
+            loaded
+            rotation="0 180 0"
+            scale="2 2 2"
+            gps-entity-place="longitude: 2.295284; latitude: 48.833466;"
+            animation-mixer>
+        </a-entity>
+
+        <a-entity id="ALMAMY4"
+            gltf-model="#glbAlmamy4"
+            loaded
+            rotation="0 180 0"
+            scale="2 2 2"
+            gps-entity-place="longitude: 2.295284; latitude: 48.833466;"
+            animation-mixer>
+        </a-entity>
+
+        <!-- NOM : pont extérieur -->
+        <a-entity id="CHLOE"
+            gltf-model="#glbChloe"
+            loaded
+            rotation="0 180 0"
+            scale="2 2 2"
+            gps-entity-place="longitude: 2.294903; latitude: 48.833488;"
+            animation-mixer>
+        </a-entity>
+
+        <!-- Milène = salle 107 -->
+        <a-entity id="MYLENE1"
+            gltf-model="#glbFlamingo"
+            loaded
+            rotation="0 180 0"
+            scale="2 2 2"
+            gps-entity-place="longitude: 2.295354; latitude: 48.833618;"
+            animation-mixer>
+        </a-entity>
+
+        <!-- NOM = couloir Sud -->
+        <a-entity id="MYLENE2"
+            gltf-model="#glbMylene1"
+            loaded
+            rotation="0 180 0"
+            scale="2 2 2"
+            gps-entity-place="longitude: 2.295085; latitude: 48.833255;"
+            animation-mixer>
+        </a-entity>
+        <a-entity id="MYLENE2"
+            gltf-model="#glbMylene2"
+            loaded
+            rotation="0 180 0"
+            scale="2 2 2"
+            gps-entity-place="longitude: 2.295085; latitude: 48.833255;"
+            animation-mixer>
+        </a-entity>
+
+        <a-camera gps-camera rotation-reader></a-camera>
+	</a-scene>
+</body>

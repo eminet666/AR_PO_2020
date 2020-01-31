@@ -39,26 +39,28 @@
 
         <!-- ENSAAMA
         2.295307, 48.833190 :  cour angle Sud-Est
-        2.295618, 48.833346 :  cour angle Nord-Est
-        2.295012, 48.833399 :  hall
-        2.295270, 48.833720 :  Violette = terrasse 107
-        2.295298, 48.833338 :  centre cour
-        2.295176, 48.833534 :  Chloé : palier relation internationales
+        2.295618, 48.833346 :  Violette : cour angle Nord-Est
+        2.295012, 48.833399 :  Lucie : hall
+        2.295270, 48.833720 :  Tsir : terrasse 107
+        2.295298, 48.833338 :  Tanilo : centre cour
+        2.295176, 48.833534 :  Hugo : palier relation internationales
         2.295488, 48.833449 :  Ronan : couloir devant 108
-        2.295284, 48.833466 :  cage escalier principal
-        2.294903, 48.833488 :  pont extérieur
+        2.295284, 48.833466 :  Almamy : escalier principal
+        2.294903, 48.833488 :  Janis : pont extérieur
         2.295354, 48.833618 :  Milène = salle 107
         2.295085, 48.833255 :  couloir Sud
         -->
 
         <a-assets>
-          <a-asset-item id="glbFlamingo" src="./models/Flamingo.glb"></a-asset-item>
-  				<a-asset-item id="glbRonan" src="./models/ronan_mante_pose.glb"></a-asset-item>
+          <a-asset-item id="glbTsir" src="./models/ok_tsir_libellule.glb"></a-asset-item>
+          <a-asset-item id="glbMylene1" src="./models/ok_mylene_bleue.glb"></a-asset-item>
+  				<a-asset-item id="glbMylene2" src="./models/ok_mylene_doree.glb"></a-asset-item>
+
   			</a-assets>
 
         <!-- NOM : cour angle Sud-Est -->
-        <a-entity id="NOM1"
-            gltf-model="#glbFlamingo"
+        <a-entity id="JANIS"
+            gltf-model="#glbTsir"
             loaded
             rotation="0 0 0"
             scale="2 2 2"
@@ -67,8 +69,8 @@
         </a-entity>
 
         <!-- NOM : cour angle Nord-Est -->
-        <a-entity id="NOM2"
-            gltf-model="#glbFlamingo"
+        <a-entity id="VIOLETTE"
+            gltf-model="#glbMylene1"
             loaded
             rotation="0 0 0"
             scale="2 2 2"
@@ -77,8 +79,8 @@
         </a-entity>
 
         <!-- NOM : Hall -->
-        <a-entity id="NOM3"
-            gltf-model="#glbFlamingo"
+        <a-entity id="LUCIE"
+            gltf-model="#glMylene2"
             loaded
             rotation="0 0 0"
             scale="2 2 2"
@@ -87,8 +89,8 @@
         </a-entity>
 
         <!-- Violette = terrasse 107 -->
-        <a-entity id="Violette"
-            gltf-model="#glbFlamingo"
+        <a-entity id="TSIR"
+            gltf-model="#glbTsir"
             loaded
             rotation="0 180 0"
             scale="2 2 2"
@@ -97,8 +99,8 @@
         </a-entity>
 
         <!-- NOM : centre cour -->
-        <a-entity id="NOM5"
-            gltf-model="#glbFlamingo"
+        <a-entity id="TANILO"
+            gltf-model="#glbMylene1"
             loaded
             rotation="0 180 0"
             scale="2 2 2"
@@ -107,8 +109,8 @@
         </a-entity>
 
         <!-- Chloé : palier relation internationales -->
-        <a-entity id="NOM6"
-            gltf-model="#glbFlamingo"
+        <a-entity id="HUGO"
+            gltf-model="#glbMylene2"
             loaded
             rotation="0 180 0"
             scale="2 2 2"
@@ -118,7 +120,7 @@
 
         <!-- RONAN : couloir devant 108 -->
         <a-entity id="RONAN"
-            gltf-model="#glbRonan"
+            gltf-model="#glbTsir"
             loaded
             rotation="90 180 0"
             scale="10 10 10"
@@ -127,8 +129,8 @@
         </a-entity>
 
         <!-- NOM : cage escalier principal -->
-        <a-entity id="NOM8"
-            gltf-model="#glbFlamingo"
+        <a-entity id="ALMAMY"
+            gltf-model="#glbMylene1"
             loaded
             rotation="0 180 0"
             scale="2 2 2"
@@ -137,8 +139,8 @@
         </a-entity>
 
         <!-- NOM : pont extérieur -->
-        <a-entity id="NOM9"
-            gltf-model="#glbFlamingo"
+        <a-entity id="CHLOE"
+            gltf-model="#glbMylene2"
             loaded
             rotation="0 180 0"
             scale="2 2 2"
@@ -147,8 +149,8 @@
         </a-entity>
 
         <!-- Milène = salle 107 -->
-        <a-entity id="Milene"
-            gltf-model="#glbFlamingo"
+        <a-entity id="MYLENE1"
+            gltf-model="#glbTsir"
             loaded
             rotation="0 180 0"
             scale="2 2 2"
@@ -157,8 +159,8 @@
         </a-entity>
 
         <!-- NOM = couloir Sud -->
-        <a-entity id="NOM3"
-            gltf-model="#glbFlamingo"
+        <a-entity id="MYLENE2"
+            gltf-model="#glbMylene1"
             loaded
             rotation="0 180 0"
             scale="2 2 2"
