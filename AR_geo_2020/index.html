@@ -53,8 +53,9 @@
 
         <a-assets>
           <a-asset-item id="glbTsir" src="./models/ok_tsir_libellule.glb"></a-asset-item>
-          <a-asset-item id="glbMylene1" src="./models/ok_mylene_bleue.glb"></a-asset-item>
-  				<a-asset-item id="glbMylene2" src="./models/ok_mylene_doree.glb"></a-asset-item>
+          <a-asset-item id="glbTanilo" src="./models/ok_tanilo_hornet.glb"></a-asset-item>
+  				<a-asset-item id="glbMylene" src="./models/ok_mylene_doree.glb"></a-asset-item>
+          <a-asset-item id="glbRonan" src="./models/ok_ronan_ninja.glb"></a-asset-item>
 
   			</a-assets>
 
@@ -89,81 +90,81 @@
         </a-entity> -->
 
         <!-- Violette = terrasse 107 -->
-        <a-entity id="TSIR"
-            gltf-model="#glbTsir"
+        <a-entity id="TERRASSE107"
+            gltf-model="#glbMylene"
             loaded
-            rotation="0 180 0"
-            scale="2 2 2"
+            rotation="90 90 0"
+            scale="1 1 1"
             gps-entity-place="longitude: 2.295270; latitude: 48.833720;"
             animation-mixer>
         </a-entity>
 
         <!-- NOM : centre cour -->
-        <a-entity id="TANILO"
-            gltf-model="#glbMylene1"
+        <a-entity id="COUR"
+            gltf-model="#glbTanilo"
             loaded
-            rotation="0 180 0"
-            scale="2 2 2"
+            rotation="90 135 0"
+            scale="1 1 1"
             gps-entity-place="longitude: 2.295298; latitude: 48.833338;"
             animation-mixer>
         </a-entity>
 
         <!-- Chloé : palier relation internationales -->
-        <a-entity id="HUGO"
-            gltf-model="#glbMylene2"
+        <a-entity id="RI"
+            gltf-model="#glbRonan"
             loaded
-            rotation="0 180 0"
-            scale="2 2 2"
+            rotation="90 135 0"
+            scale="1 1 1"
             gps-entity-place="longitude: 2.295176; latitude: 48.833534;"
             animation-mixer>
         </a-entity>
 
         <!-- RONAN : couloir devant 108 -->
-        <a-entity id="RONAN"
+        <a-entity id="COULOIR108"
             gltf-model="#glbTsir"
             loaded
             rotation="90 180 0"
-            scale="10 10 10"
+            scale="0.5 0.5 0.5"
             gps-entity-place="longitude: 2.295488; latitude: 48.833449;"
             animation-mixer>
         </a-entity>
 
         <!-- NOM : cage escalier principal -->
-        <a-entity id="ALMAMY"
-            gltf-model="#glbMylene1"
+        <a-entity id="ESCALIER"
+            gltf-model="#glbMylene"
             loaded
-            rotation="0 180 0"
-            scale="2 2 2"
+            rotation="90 90 0"
+            scale="1 1 1"
             gps-entity-place="longitude: 2.295284; latitude: 48.833466;"
             animation-mixer>
         </a-entity>
 
         <!-- NOM : pont extérieur -->
-        <a-entity id="CHLOE"
-            gltf-model="#glbMylene2"
+        <a-entity id="PONT"
+            gltf-model="#glbRonan"
             loaded
-            rotation="0 180 0"
-            scale="2 2 2"
+            rotation="90 135 0"
+            scale="1 1 1"
             gps-entity-place="longitude: 2.294903; latitude: 48.833488;"
             animation-mixer>
         </a-entity>
 
         <!-- Milène = salle 107 -->
-        <a-entity id="MYLENE1"
+        <a-entity id="SALLE107"
             gltf-model="#glbTsir"
             loaded
-            rotation="0 180 0"
-            scale="2 2 2"
+            rotation="90 180 0"
+            scale="0.5 0.5 0.5"
             gps-entity-place="longitude: 2.295354; latitude: 48.833618;"
             animation-mixer>
         </a-entity>
 
         <!-- NOM = couloir Sud -->
-        <a-entity id="MYLENE2"
-            gltf-model="#glbMylene1"
+        <a-entity id="COULOIRSUD"
+            gltf-model="#glbTanilo"
             loaded
-            rotation="0 180 0"
-            scale="2 2 2"
+            rotation="90 135 0"
+            scale="1 1 1"
             gps-entity-place="longitude: 2.295085; latitude: 48.833255;"
             animation-mixer>
         </a-entity>
