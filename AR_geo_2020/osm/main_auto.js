@@ -13,7 +13,7 @@ let etiennePlaces = [
 ]
 
 // -------------------- FCT : INIT -------------------
-let lonlat = [0, 0];
+let lonlat = [2.058521, 48.920380];
 
 function init() {
 
@@ -24,7 +24,7 @@ function init() {
     "https://c.tile.openstreetmap.org/${z}/${x}/${y}.png",
   ]
 
-//getFirstPos();
+getFirstPos();
 
   map = new OpenLayers.Map("basicMap")
 
@@ -112,7 +112,11 @@ function followUser({ markers, fromProjection, toProjection }) {
           console.log("Geolocation is not supported by your browser");
         } else {
           console.log('Locating…');
-          navigator.geolocation.getCurrentPosition(success, error);
+          navigator.geolocation.getCurrentPosition(success, error,{
+            enableHighAccuracy : false,
+            maximumAge: 0,
+            timeout: 5000
+          });
         }
 
       }
