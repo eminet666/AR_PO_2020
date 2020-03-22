@@ -1,3 +1,4 @@
+// ------------------- DATA ---------------------
 // https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html
 let somePlaces = [
   {
@@ -11,6 +12,7 @@ let etiennePlaces = [
   { lonlat:[2.295307, 48.833190] }, // cour angle Sud-Est
 ]
 
+// -------------------- FCT : INIT -------------------
 function init() {
 
   // https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html
@@ -21,7 +23,8 @@ function init() {
   ]
 
   map = new OpenLayers.Map("basicMap")
-  let lonlat         = [2.054978, 48.923128]
+  //let lonlat         = [2.054978, 48.923128]
+  let lonlat = getFirstPos();
   let mapnik         = new OpenLayers.Layer.OSM('lol', url)
   let fromProjection = new OpenLayers.Projection("EPSG:4326")   // Transform from WGS 1984
   let toProjection   = new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
@@ -50,6 +53,7 @@ function init() {
 
 }
 
+// ------------------- FCT : FOLLOW USER --------------------
 function followUser({ markers, fromProjection, toProjection }) {
 
   function success(pos) {
@@ -80,4 +84,29 @@ function followUser({ markers, fromProjection, toProjection }) {
 
 }
 
+// ------------------- FCT : getFirstPos --------------------
+function getFirstPos() {
+
+  function success(pos) {
+
+    let { longitude, latitude } = pos.coords
+    console.log(`user position: (${longitude.toFixed(6)}, ${latitude.toFixed(6)})`)
+  }
+
+  function error(err) {
+      console.warn('ERROR(' + err.code + '): ' + err.message)
+  }
+
+  const options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0,
+  }
+
+  const id = navigator.geolocation.watchPosition(success, error, options)
+
+}
+
+
+// --------------------------
 init()
