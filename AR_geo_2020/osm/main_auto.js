@@ -22,7 +22,7 @@ function init() {
 
   map = new OpenLayers.Map("basicMap")
   let lonlat         = [2.054978, 48.923128]
-  console.log(lonlat[0], lonlat[1])
+  console.log("ici "+lonlat)
   let mapnik         = new OpenLayers.Layer.OSM('lol', url)
   let fromProjection = new OpenLayers.Projection("EPSG:4326")   // Transform from WGS 1984
   let toProjection   = new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
@@ -40,10 +40,12 @@ function init() {
   //   markers.addMarker(new OpenLayers.Marker(position))
   // }
 
+/*
   for (let place of etiennePlaces) {
     let position = new OpenLayers.LonLat(...place.lonlat).transform(fromProjection, toProjection)
     markers.addMarker(new OpenLayers.Marker(position))
   }
+*/
 
   followUser({ markers, fromProjection, toProjection })
 
