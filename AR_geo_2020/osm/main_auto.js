@@ -5,25 +5,10 @@ let somePlaces = [
     lonlat: [2.295264, 48.833733],
     scale: 3,
   },
-  {
-    name: 'ENSAAMA cour centrale',
-    lonlat: [2.295328, 48.833342],
-    scale: 3,
-  },
 ]
 
 let etiennePlaces = [
   { lonlat:[2.295307, 48.833190] }, // cour angle Sud-Est
-  { lonlat:[2.295618, 48.833346] }, // cour angle Nord-Est
-  { lonlat:[2.295012, 48.833399] }, // hall
-  { lonlat:[2.295270, 48.833720] }, // Violette = terrasse 107
-  { lonlat:[2.295298, 48.833338] }, // centre cour
-  { lonlat:[2.295176, 48.833534] }, // Chloé : palier relation internationales
-  { lonlat:[2.295488, 48.833449] }, // couloir devant 108
-  { lonlat:[2.295284, 48.833466] }, // cage escalier principal
-  { lonlat:[2.294903, 48.833488] }, // pont
-  { lonlat:[2.295354, 48.833618] }, // Milène = salle 107
-  { lonlat:[2.295085, 48.833255] }, // couloir Sud
 ]
 
 function init() {
@@ -37,6 +22,7 @@ function init() {
 
   map = new OpenLayers.Map("basicMap")
   let lonlat         = [2.054978, 48.923128]
+  console.log(lonlat[0], lonlat[1])
   let mapnik         = new OpenLayers.Layer.OSM('lol', url)
   let fromProjection = new OpenLayers.Projection("EPSG:4326")   // Transform from WGS 1984
   let toProjection   = new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
