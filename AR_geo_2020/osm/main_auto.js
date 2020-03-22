@@ -90,6 +90,7 @@ function followUser({ markers, fromProjection, toProjection }) {
 // ------------------- FCT : getFirstPos --------------------
       let trouve = false;
       function getFirstPos() {
+        console.log("coucou");
           while(!trouve) {
             geoFindMe();
           }
@@ -100,7 +101,7 @@ function followUser({ markers, fromProjection, toProjection }) {
         function success(position) {
           lonlat[1]  = position.coords.latitude;
           lonlat[0] = position.coords.longitude;
-          console.log(latitude, longitude);
+          console.log("trouve"+lonlat[1]+lonlat[0]);
           trouve = true;
         }
 
