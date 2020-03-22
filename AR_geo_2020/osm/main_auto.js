@@ -24,7 +24,7 @@ function init() {
     "https://c.tile.openstreetmap.org/${z}/${x}/${y}.png",
   ]
 
-getFirstPos();
+//getFirstPos();
 
   map = new OpenLayers.Map("basicMap")
 
