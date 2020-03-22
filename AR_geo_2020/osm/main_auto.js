@@ -87,15 +87,20 @@ function followUser({ markers, fromProjection, toProjection }) {
 
 // ------------------- FCT : getFirstPos --------------------
 function getFirstPos() {
+  let found = false;
+  do while (!found) {
+    navigator.geolocation.getCurrentPosition(positionIs, positionIsNot, {
+      enableHighAccuracy : false,
+      maximumAge: 0,
+      timeout: 5000
+    });
+  }
 
-  navigator.geolocation.getCurrentPosition(positionIs, positionIsNot, {
-    enableHighAccuracy : false,
-    maximumAge: 0,
-    timeout: 5000
-  });
 
   function positionIs(position) {
+    found = true;
     console.log(position.coords.latitude.toFixed(6) + _ +position.coords.longitude.toFixed(6)) ;
+
   }
 
   function positionIsNot(err) {
