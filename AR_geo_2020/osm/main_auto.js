@@ -13,6 +13,8 @@ let etiennePlaces = [
 ]
 
 // -------------------- FCT : INIT -------------------
+let lonlat = [0, 0];
+
 function init() {
 
   // https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html
@@ -22,10 +24,10 @@ function init() {
     "https://c.tile.openstreetmap.org/${z}/${x}/${y}.png",
   ]
 
-//getFirstPos();
+getFirstPos();
 
   map = new OpenLayers.Map("basicMap")
-  let lonlat         = [2.054978, 48.923128]
+
   let mapnik         = new OpenLayers.Layer.OSM('lol', url)
   let fromProjection = new OpenLayers.Projection("EPSG:4326")   // Transform from WGS 1984
   let toProjection   = new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
@@ -86,25 +88,34 @@ function followUser({ markers, fromProjection, toProjection }) {
 }
 
 // ------------------- FCT : getFirstPos --------------------
-/*
-function getFirstPos() {
-    navigator.geolocation.getCurrentPosition(positionIs, positionIsNot, {
-      enableHighAccuracy : false,
-      maximumAge: 0,
-      timeout: 5000
-    });
+      let trouve = false;
+      function getFirstPos() {
+          while(!trouve) {
+            geoFindMe();
+          }
+      }
 
-  function positionIs(position) {
-    console.log(position.coords.latitude.toFixed(6) + _ +position.coords.longitude.toFixed(6)) ;
-  }
+      function geoFindMe() {
 
-  function positionIsNot(err) {
-    console.log("ERROR: " + err.code + " " + err.message)
-  }
+        function success(position) {
+          lonlat[1]  = position.coords.latitude;
+          lonlat[0] = position.coords.longitude;
+          console.log(latitude, longitude);
+          trouve = true;
+        }
 
-}
-*/
+        function error() {
+          console.log('Unable to retrieve your location');
+        }
 
+        if (!navigator.geolocation) {
+          console.log("Geolocation is not supported by your browser");
+        } else {
+          console.log('Locating…');
+          navigator.geolocation.getCurrentPosition(success, error);
+        }
+
+      }
 
 // --------------------------
 init()

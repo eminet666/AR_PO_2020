@@ -12,12 +12,20 @@
   <body>
 
     <script>
+      let trouve = false;
+      function getFirstPos() {
+          while(!trouve) {
+            geoFindMe();
+          }
+      }
+
       function geoFindMe() {
 
         function success(position) {
           const latitude  = position.coords.latitude;
           const longitude = position.coords.longitude;
           console.log(latitude, longitude);
+          trouve = true;
         }
 
         function error() {
@@ -32,7 +40,6 @@
         }
 
       }
-      geoFindMe();
     </script>
 
 
