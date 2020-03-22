@@ -22,9 +22,10 @@ function init() {
     "https://c.tile.openstreetmap.org/${z}/${x}/${y}.png",
   ]
 
+getFirstPos();
+
   map = new OpenLayers.Map("basicMap")
   let lonlat         = [2.054978, 48.923128]
-  //getFirstPos();
   let mapnik         = new OpenLayers.Layer.OSM('lol', url)
   let fromProjection = new OpenLayers.Projection("EPSG:4326")   // Transform from WGS 1984
   let toProjection   = new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
@@ -87,23 +88,19 @@ function followUser({ markers, fromProjection, toProjection }) {
 // ------------------- FCT : getFirstPos --------------------
 function getFirstPos() {
 
-  function success(pos) {
+  navigator.geolocation.getCurrentPosition(positionIs, positionIsNot, {
+    enableHighAccuracy : false,
+    maximumAge: 0,
+    timeout: 5000
+  });
 
-    let { longitude, latitude } = pos.coords
-    console.log(`first user position: (${longitude.toFixed(6)}, ${latitude.toFixed(6)})`)
+  function positionIs(position) {
+    console.log(position.coords.latitude.toFixed(6) + _ +position.coords.longitude.toFixed(6)) ;
   }
 
-  function error(err) {
-      console.warn('ERROR(' + err.code + '): ' + err.message)
+  function positionIsNot(err) {
+    document.getElementById("results").innerHTML += "ERROR: " + err.code + " " + err.message + "<br>";
   }
-
-  const options = {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 0,
-  }
-
-  const id = navigator.geolocation.watchPosition(success, error, options)
 
 }
 
