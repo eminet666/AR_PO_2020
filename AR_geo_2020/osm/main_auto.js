@@ -22,7 +22,7 @@ function init() {
 
   map = new OpenLayers.Map("basicMap")
   let lonlat         = [2.054978, 48.923128]
-  console.log("ici "+lonlat)
+  console.log("ici "+lonlat[0]+ " "+ lonlat[1])
   let mapnik         = new OpenLayers.Layer.OSM('lol', url)
   let fromProjection = new OpenLayers.Projection("EPSG:4326")   // Transform from WGS 1984
   let toProjection   = new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
