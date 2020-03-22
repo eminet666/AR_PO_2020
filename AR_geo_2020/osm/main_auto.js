@@ -11,6 +11,18 @@ let etiennePlaces = [
   { lonlat:[2.295307, 48.833190] }, // cour angle Sud-Est
 ]
 
+// -----------------------------------------------
+const options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+}
+
+const id = navigator.geolocation.watchPosition(success, error, options)
+
+}
+
+// -----------------------------------------------
 function init() {
 
   // https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html
@@ -35,11 +47,12 @@ function init() {
   var markers = new OpenLayers.Layer.Markers( "Markers" )
   map.addLayer(markers)
 
-  // for (let place of somePlaces) {
-  //   let position = new OpenLayers.LonLat(...place.lonlat).transform( fromProjection, toProjection)
-  //   markers.addMarker(new OpenLayers.Marker(position))
-  // }
-
+/*
+   for (let place of somePlaces) {
+     let position = new OpenLayers.LonLat(...place.lonlat).transform( fromProjection, toProjection)
+     markers.addMarker(new OpenLayers.Marker(position))
+   }
+*/
 /*
   for (let place of etiennePlaces) {
     let position = new OpenLayers.LonLat(...place.lonlat).transform(fromProjection, toProjection)
@@ -51,6 +64,7 @@ function init() {
 
 }
 
+// -----------------------------------------------
 function followUser({ markers, fromProjection, toProjection }) {
 
   function success(pos) {
@@ -67,18 +81,9 @@ function followUser({ markers, fromProjection, toProjection }) {
     markers.addMarker(new OpenLayers.Marker(position, icon))
   }
 
+  // -----------------------------------------------
   function error(err) {
       console.warn('ERROR(' + err.code + '): ' + err.message)
   }
-
-  const options = {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 0,
-  }
-
-  const id = navigator.geolocation.watchPosition(success, error, options)
-
-}
 
 init()
