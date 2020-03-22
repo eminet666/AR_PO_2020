@@ -22,7 +22,7 @@ function init() {
     "https://c.tile.openstreetmap.org/${z}/${x}/${y}.png",
   ]
 
-getFirstPos();
+//getFirstPos();
 
   map = new OpenLayers.Map("basicMap")
   let lonlat         = [2.054978, 48.923128]
@@ -86,6 +86,7 @@ function followUser({ markers, fromProjection, toProjection }) {
 }
 
 // ------------------- FCT : getFirstPos --------------------
+/*
 function getFirstPos() {
     navigator.geolocation.getCurrentPosition(positionIs, positionIsNot, {
       enableHighAccuracy : false,
@@ -102,6 +103,7 @@ function getFirstPos() {
   }
 
 }
+*/
 
 
 // --------------------------
